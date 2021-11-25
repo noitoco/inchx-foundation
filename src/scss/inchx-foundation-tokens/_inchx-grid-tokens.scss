@@ -1,0 +1,37 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// GRID TOKENS
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use 'sass:math';
+
+
+
+
+// Grid wrapper widths
+$inchx-grid-width-sm: 100%;
+$inchx-grid-width-md: 640px;
+$inchx-grid-width-lg: 1200px;
+$inchx-grid-width-xl: 1560px;
+
+
+
+
+// Columns number for a selected grid width
+$inchx-grid-columns: (
+    sm: 2,
+    md: 4,
+    lg: 12,
+    xl: 12
+);
+
+
+
+
+// Unified gutter size
+$inchx-grid-gutter: 40px;

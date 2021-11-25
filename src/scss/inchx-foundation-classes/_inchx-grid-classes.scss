@@ -1,0 +1,96 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// FUNCTIONAL GRID CLASSES
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use 'sass:math';
+@use 'sass:map';
+@use '../inchx-foundation-helpers/inchx-mixins' as *;
+@use '../inchx-foundation-tokens/inchx-grid-tokens' as *;
+
+
+
+
+// Grid namespace
+.inchx-g {
+    // Grid wrapper element
+    &-w {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: $inchx-grid-width-sm;
+        margin-right: auto;
+        margin-left:  auto;
+
+        @include breakpoint(md) { width: $inchx-grid-width-md; }
+        @include breakpoint(lg) { width: $inchx-grid-width-lg; }
+        @include breakpoint(xl) { width: $inchx-grid-width-xl; }
+    }
+
+
+    // Grid column element
+    &-c {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        padding-right: $inchx-grid-gutter * 0.5;
+        padding-left:  $inchx-grid-gutter * 0.5;
+
+
+        // DEV ONLY
+        // column preview
+        // &::before {
+        //     content: '';
+        //     display: block;
+        //     position: absolute;
+        //     top: 0;
+        //     right: $inchx-grid-gutter * 0.5;
+        //     bottom: 0;
+        //     left: $inchx-grid-gutter * 0.5;
+        //     background-color: rgb(0, 128, 255);
+        //     opacity: 0.2;
+        //     pointer-events: none;
+        // }
+        // DEV ONLY
+
+
+        // 50% column for small grid wrapper
+        &1-sm { @include breakpoint(sm) { width: 50%; }}
+
+        // 4 column sizes for medium grid wrapper
+        @include breakpoint(md-only) {
+            @for $i from 1 through map.get($inchx-grid-columns, md) { &#{$i}-md { width: math.div($inchx-grid-width-md, map.get($inchx-grid-columns, md)) * $i; } }
+        }
+
+        // 12 column sizes for large and x-large grid wrappers
+        @include breakpoint(lg) {
+            @for $i from 1 through map.get($inchx-grid-columns, lg) {
+                &#{$i}-lg {
+                    width: math.div($inchx-grid-width-lg, map.get($inchx-grid-columns, lg)) * $i;
+                    @include breakpoint(xl) { width: math.div($inchx-grid-width-xl, map.get($inchx-grid-columns, xl)) * $i; }
+                }
+            }
+        }
+
+        // 12 column sizes for x-large grid wrapper
+        @include breakpoint(xl) {
+            @for $i from 1 through map.get($inchx-grid-columns, xl) { &#{$i}-xl { width: math.div($inchx-grid-width-xl, map.get($inchx-grid-columns, xl)) * $i; } }
+        }
+
+
+        // Column position modifiers
+        &-to {
+            &-top    { @include viewports { align-self: flex-start; } }
+            &-right  { @include viewports { margin-left: auto; } }
+            &-bottom { @include viewports { align-self: flex-end; } }
+            &-left   { @include viewports { margin-right: auto; } }
+            &-center { @include viewports { align-self: center; } }
+            &-reset  { @include viewports { align-self: auto; margin-right: 0; margin-left: 0; } }
+        }
+    }
+}

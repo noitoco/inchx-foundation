@@ -1,0 +1,14 @@
+{
+  "name": "inchx_foundation",
+  "version": "1.0.0",
+  "description": "INCHX FOUNDATION",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
+    "parcel": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

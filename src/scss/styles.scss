@@ -1,0 +1,13 @@
+// Reset and set basic styles
+@import './inchx-foundation-helpers/inchx-reset';
+
+// Use INCHX Foundation tokens directly in your stylesheets
+// or import ready to use functional classes
+@import './inchx-foundation-classes/inchx-color-classes';
+@import './inchx-foundation-classes/inchx-spacing-classes';
+@import './inchx-foundation-classes/inchx-grid-classes';
+@import './inchx-foundation-classes/inchx-shadow-classes';
+@import './inchx-foundation-classes/inchx-typography-classes';
+
+// Import INCHX Web Components functional classes
+@import './inchx-web-components/inchx-web-c-button';

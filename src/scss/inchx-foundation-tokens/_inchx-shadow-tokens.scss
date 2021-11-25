@@ -1,0 +1,20 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// SHADOW TOKENS
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use '../inchx-foundation-tokens/inchx-color-tokens' as *;
+
+
+
+// Shadow reset
+@mixin inchx-shadow-reset { box-shadow: none; }
+// Shadow elevation +1
+@mixin inchx-shadow-el-1  { box-shadow: 0px 1px 3px rgba($inchx-color-shadow-default, 0.1), 0px 1px 2px rgba($inchx-color-shadow-default, 0.15); }
+// Shadow elevation +2
+@mixin inchx-shadow-el-2  { box-shadow: 0px 4px 8px rgba($inchx-color-shadow-default, 0.12), 0px 1px 3px rgba($inchx-color-shadow-default, 0.1); }

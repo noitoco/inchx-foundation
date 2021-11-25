@@ -1,0 +1,31 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// FUNCTIONAL SPACING CLASSES
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use '../inchx-foundation-helpers/inchx-mixins' as *;
+
+
+
+
+// Padding
+.inchx-s-p {
+    &t { @include spacing(padding, (top)); }
+    &b { @include spacing(padding, (bottom)); }
+    &v { @include spacing(padding, (top, bottom)); }
+}
+
+
+
+
+// Margin
+.inchx-s-m {
+    &t { @include spacing(margin, (top)); }
+    &b { @include spacing(margin, (bottom)); }
+    &v { @include spacing(margin, (top, bottom)); }
+}

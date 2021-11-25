@@ -1,0 +1,161 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Web Components
+//
+// - - - - - - - - - - - - - - - - - -
+// FUNCTIONAL BUTTON CLASSES
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use 'sass:list';
+@use 'sass:color';
+@use '../inchx-foundation-helpers/inchx-mixins' as *;
+@use '../inchx-foundation-tokens/inchx-color-tokens' as *;
+@use '../inchx-foundation-tokens/inchx-spacing-tokens' as *;
+@use '../inchx-foundation-tokens/inchx-typography-tokens' as *;
+@use '../inchx-foundation-tokens/inchx-animation-tokens' as *;
+
+
+
+
+// Button init class
+.inchx-btn {
+    display: inline-block;
+    position: relative;
+    font-family: $inchx-typo-ff-default;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    overflow: hidden;
+    z-index: 0;
+    transition: color $inchx-animation-time $inchx-animation-easing;
+
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -20px;
+        opacity: 0;
+        z-index: -1;
+        transition: transform $inchx-animation-time $inchx-animation-easing,
+                    opacity $inchx-animation-time $inchx-animation-easing,
+                    background-color $inchx-animation-time linear;
+    }
+    &::before {
+        transform: translateY(-50%) rotate(-45deg);
+        transform-origin: left bottom;
+    }
+    &::after {
+        transform: translateY(50%) rotate(40deg);
+        transform-origin: left top;
+    }
+
+
+    &:hover {
+        transition: color $inchx-animation-time-slow $inchx-animation-easing;
+
+        &::before,
+        &::after {
+            opacity: 1;
+            transition: transform $inchx-animation-time $inchx-animation-easing,
+                        opacity $inchx-animation-time $inchx-animation-easing,
+                        background-color $inchx-animation-time-fast $inchx-animation-easing;
+        }
+        &::before { transform: translateY(-50%) rotate(0deg); }
+        &::after  { transform: translateY(50%) rotate(0deg); }
+    }
+
+
+    &[disabled] { color: $inchx-color-button-label-primary; background-color: $inchx-color-button-background-white; opacity: 0.25; }
+}
+
+
+
+
+// Button size classes [200,300,400]
+// based on the $inchx-typo-button-sizes map
+.inchx-btn-- {
+    @each $type, $numbers in $inchx-typo-button-sizes {
+        &#{$type} { @include viewports {
+            padding: #{ (list.nth($numbers, 2) * 0.5) - 4 } #{ list.nth($numbers, 2) };
+            font-size: #{ list.nth($numbers, 1) };
+            line-height: #{ list.nth($numbers, 2) }; } }
+    }
+}
+
+
+
+
+// Button STYLE + TYPE classes
+// Primary + [Solid, Outline, Ghost]
+.inchx-btn--primary {
+    &::before,
+    &::after { background-color: $inchx-color-button-background-primary; }
+
+    &:hover  { &::before, &::after { background-color: $inchx-color-button-background-primary-hover; } }
+    &:active { &::before, &::after { background-color: color.scale($inchx-color-button-background-primary-hover, $lightness: -20%); } }
+}
+.inchx-btn--primary.inchx-btn--solid {
+    color: $inchx-color-button-label-white;
+    background-color: $inchx-color-button-background-primary;
+}
+.inchx-btn--primary.inchx-btn--outline {
+    outline: 1px solid $inchx-color-button-outline-primary;
+}
+.inchx-btn--primary.inchx-btn--outline,
+.inchx-btn--primary.inchx-btn--ghost {
+    color: $inchx-color-button-label-primary;
+    &:hover  { color: $inchx-color-button-label-white; }
+    &:active { color: $inchx-color-button-label-white; }
+}
+
+
+// Action + [Solid, Outline, Ghost]
+.inchx-btn--action {
+    &::before,
+    &::after { background-color: $inchx-color-button-background-action; }
+
+    &:hover  { &::before, &::after { background-color: $inchx-color-button-background-action-hover; } }
+    &:active { &::before, &::after { background-color: color.scale($inchx-color-button-background-action-hover, $lightness: -10%); } }
+}
+.inchx-btn--action.inchx-btn--solid {
+    color: $inchx-color-button-label-white;
+    background-color: $inchx-color-button-background-action;
+}
+.inchx-btn--action.inchx-btn--outline {
+    outline: 1px solid $inchx-color-button-outline-action;
+}
+.inchx-btn--action.inchx-btn--outline,
+.inchx-btn--action.inchx-btn--ghost {
+    color: $inchx-color-button-label-action;
+    &:hover  { color: $inchx-color-button-label-white; }
+    &:active { color: $inchx-color-button-label-white; }
+}
+
+
+// Inverted + [Solid, Outline, Ghost]
+.inchx-btn--inverted {
+    &::before,
+    &::after { background-color: $inchx-color-button-background-inverted; }
+
+    &:hover  { &::before, &::after { background-color: $inchx-color-button-background-inverted-hover; } }
+    &:active { &::before, &::after { background-color: color.scale($inchx-color-button-background-inverted-hover, $lightness: 5%); } }
+}
+.inchx-btn--inverted.inchx-btn--solid {
+    color: $inchx-color-button-label-primary;
+    background-color: $inchx-color-button-background-inverted;
+}
+.inchx-btn--inverted.inchx-btn--outline {
+    outline: 1px solid $inchx-color-button-outline-inverted;
+}
+.inchx-btn--inverted.inchx-btn--outline,
+.inchx-btn--inverted.inchx-btn--ghost {
+    color: $inchx-color-button-label-inverted;
+    &:hover  { color: $inchx-color-button-label-primary; }
+    &:active { color: $inchx-color-button-label-primary; }
+}

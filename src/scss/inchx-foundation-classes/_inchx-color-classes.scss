@@ -1,0 +1,19 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// FUNCTIONAL COLOR CLASSES
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use '../inchx-foundation-tokens/inchx-color-tokens' as *;
+
+
+
+
+// Background color classes
+.inchx-c-bkg--white   { background-color: $inchx-color-bkg-white; }
+.inchx-c-bkg--light   { background-color: $inchx-color-bkg-light; }
+.inchx-c-bkg--primary { background-color: $inchx-color-bkg-primary; }

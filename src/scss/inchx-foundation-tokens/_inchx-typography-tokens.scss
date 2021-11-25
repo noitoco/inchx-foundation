@@ -1,0 +1,60 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// TYPOGRAPHY TOKENS
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+
+
+// Typo font family tokens
+$inchx-typo-ff-display: 'Prohibition', sans-serif;
+$inchx-typo-ff-default: 'Interstate', sans-serif;
+
+
+
+
+// Typo size tokens
+// Title
+$inchx-typo-title-sizes: (
+    100: (20px, 24px),
+    200: (30px, 36px),
+    300: (40px, 44px),
+    400: (62px, 68px),
+    500: (96px, 104px),
+    600: (120px, 128px),
+);
+// Text
+$inchx-typo-text-sizes: (
+    200: (13px, 20px),
+    300: (16px, 24px),
+    400: (21px, 32px),
+);
+// Label
+$inchx-typo-label-sizes: (
+    200: (10px, 20px),
+    300: (13px, 24px),
+    400: (16px, 32px),
+);
+// Link
+$inchx-typo-link-sizes: (
+    200: (13px, 20px),
+    300: (16px, 24px),
+    400: (21px, 32px),
+);
+// Button
+$inchx-typo-button-sizes: (
+    200: (10px, 20px),
+    300: (13px, 24px),
+    400: (16px, 32px),
+);
+
+
+
+
+// Typo weight tokens
+$inchx-typo-weight-std:    400;
+$inchx-typo-weight-strong: 700;

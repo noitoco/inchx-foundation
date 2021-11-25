@@ -1,0 +1,24 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// FUNCTIONAL SHADOW CLASSES
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use '../inchx-foundation-tokens/inchx-shadow-tokens' as *;
+@use '../inchx-foundation-helpers/inchx-mixins' as *;
+
+
+
+
+// Shadow reset class
+.inchx-sh-reset { @include viewports { @include inchx-shadow-reset; } }
+
+// Shadow elevation +1 class
+.inchx-sh-el-1 { @include viewports { @include inchx-shadow-el-1; } }
+
+// Shadow elevation +2 class
+.inchx-sh-el-2 { @include viewports { @include inchx-shadow-el-2 } }

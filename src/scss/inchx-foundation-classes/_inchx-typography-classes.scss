@@ -1,0 +1,129 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// FUNCTIONAL TYPOGRAPHY CLASSES
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use 'sass:list';
+@use '../inchx-foundation-helpers/inchx-mixins' as *;
+@use '../inchx-foundation-tokens/inchx-color-tokens' as *;
+@use '../inchx-foundation-tokens/inchx-typography-tokens' as *;
+@use '../inchx-foundation-tokens/inchx-animation-tokens' as *;
+
+
+
+
+// Title init class
+.inchx-t-title {
+    font-family: $inchx-typo-ff-display;
+    font-weight: $inchx-typo-weight-std !important;
+}
+
+// Title color classes
+.inchx-t-title--default   { color: $inchx-color-title-default; }
+.inchx-t-title--secondary { color: $inchx-color-title-secondary; }
+.inchx-t-title--inverted  { color: $inchx-color-title-inverted; }
+.inchx-t-title--white     { color: $inchx-color-title-white; }
+
+// Title size classes
+.inchx-t-title-- {
+    @each $type, $numbers in $inchx-typo-title-sizes {
+        &#{$type} { @include viewports { font-size: #{ list.nth($numbers, 1) }; line-height: #{ list.nth($numbers, 2) }; } }
+    }
+}
+
+
+
+
+// Text init class
+.inchx-t-text {
+    font-family: $inchx-typo-ff-default;
+}
+
+// Text color classes
+.inchx-t-text--default  { color: $inchx-color-text-default; }
+.inchx-t-text--lighter  { color: $inchx-color-text-lighter; }
+.inchx-t-text--inverted { color: $inchx-color-text-inverted; }
+.inchx-t-text--white    { color: $inchx-color-text-white; }
+
+// Text size classes
+.inchx-t-text-- {
+    @each $type, $numbers in $inchx-typo-text-sizes {
+        &#{$type} { @include viewports { font-size: #{ list.nth($numbers, 1) }; line-height: #{ list.nth($numbers, 2) }; } }
+    }
+}
+
+
+
+
+// Link init class
+.inchx-t-link {
+    display: inline-block;
+    position: relative;
+    font-family: $inchx-typo-ff-default;
+    white-space: nowrap;
+    transition: color $inchx-animation-time $inchx-animation-easing;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 1px;
+        background: currentColor;
+        bottom: 0;
+        pointer-events: none;
+        transform: scale3d(0, 1, 1) translateY(6px);
+        transition: transform $inchx-animation-time $inchx-animation-easing;
+    }
+    &::before { left: 0; transform-origin: 0% 50%; }
+    &::after  { right: 0; transform-origin: 100% 50%; }
+
+    &:hover {
+        &::before,
+        &::after {
+            transform: scale3d(1, 1, 1) translateY(6px);
+        }
+    }
+}
+
+// Link color classes
+.inchx-t-link--default     { color: $inchx-color-link-default;     &:hover { color: $inchx-color-link-default-hover; } }
+.inchx-t-link--neutral     { color: $inchx-color-link-neutral;     &:hover { color: $inchx-color-link-default-hover; } }
+.inchx-t-link--alternative { color: $inchx-color-link-alternative; &:hover { color: $inchx-color-link-alternative-hover; } }
+.inchx-t-link--inverted    { color: $inchx-color-link-inverted;    &:hover { color: $inchx-color-link-inverted-hover; } }
+.inchx-t-link--white       { color: $inchx-color-link-white;       &:hover { color: $inchx-color-link-white; } }
+
+// Text size classes
+.inchx-t-link-- {
+    @each $type, $numbers in $inchx-typo-link-sizes {
+        &#{$type} { @include viewports { font-size: #{ list.nth($numbers, 1) }; line-height: #{ list.nth($numbers, 2) }; } }
+    }
+}
+
+
+
+
+// Label init class
+.inchx-t-label {
+    font-family: $inchx-typo-ff-default;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+// Label color classes
+.inchx-t-label--primary   { color: $inchx-color-label-primary; }
+.inchx-t-label--secondary { color: $inchx-color-label-secondary; }
+.inchx-t-label--inverted  { color: $inchx-color-label-inverted; }
+.inchx-t-label--white     { color: $inchx-color-label-white; }
+
+// Label size classes
+.inchx-t-label-- {
+    @each $type, $numbers in $inchx-typo-label-sizes {
+        &#{$type} { @include viewports { font-size: #{ list.nth($numbers, 1) }; line-height: #{ list.nth($numbers, 2) }; } }
+    }
+}

@@ -1,0 +1,105 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// COLOR TOKENS
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+
+
+// COLOR OPTION TOKENS
+// Base
+$inchx-color-white:             #ffffff;
+$inchx-color-black:             #141414;
+// Grey
+$inchx-color-inchgrey--100:     #F5F9FA;
+$inchx-color-inchgrey--200:     #EDF2F2;
+$inchx-color-inchgrey--300:     #D2DEE0;
+$inchx-color-inchgrey--400:     #BCC9CC;
+$inchx-color-inchgrey--500:     #899EA3;
+$inchx-color-inchgrey--600:     #556B70;
+$inchx-color-inchgrey--700:     #304147;
+$inchx-color-inchgrey--800:     #192429;
+// Primary
+$inchx-color-primary--lighter:  #355766;
+$inchx-color-primary--std:      #093447;
+$inchx-color-primary--darker:   #031E29;
+// Secondary
+$inchx-color-secondary--lighter:#D6B292;
+$inchx-color-secondary--std:    #C79467;
+$inchx-color-secondary--darker: #AD815A;
+// Action
+$inchx-color-action--lighter:   #E55C32;
+$inchx-color-action--std:       #DF3501;
+$inchx-color-action--darker:    #B82B00;
+// Accent
+$inchx-color-accent--lighter:   #359ACC;
+$inchx-color-accent--std:       #007AB8;
+$inchx-color-accent--darker:    #005F8F;
+
+
+
+
+// COLOR DECISION TOKENS
+// Background
+$inchx-color-bkg-white:                         $inchx-color-white;
+$inchx-color-bkg-light:                         $inchx-color-inchgrey--100;
+$inchx-color-bkg-primary:                       $inchx-color-primary--std;
+// Typo | Title
+$inchx-color-title-default:                     $inchx-color-inchgrey--800;
+$inchx-color-title-secondary:                   $inchx-color-secondary--std;
+$inchx-color-title-inverted:                    $inchx-color-inchgrey--200;
+$inchx-color-title-white:                       $inchx-color-white;
+// Typo | Text
+$inchx-color-text-default:                      $inchx-color-inchgrey--700;
+$inchx-color-text-lighter:                      $inchx-color-inchgrey--600;
+$inchx-color-text-inverted:                     $inchx-color-inchgrey--400;
+$inchx-color-text-white:                        $inchx-color-white;
+// Typo | Link
+$inchx-color-link-default:                      $inchx-color-action--std;
+$inchx-color-link-neutral:                      $inchx-color-inchgrey--600;
+$inchx-color-link-default-hover:                $inchx-color-action--darker;
+$inchx-color-link-alternative:                  $inchx-color-accent--std;
+$inchx-color-link-alternative-hover:            $inchx-color-accent--darker;
+$inchx-color-link-inverted:                     $inchx-color-inchgrey--200;
+$inchx-color-link-inverted-hover:               $inchx-color-white;
+$inchx-color-link-white:                        $inchx-color-white;
+// Typo | Label
+$inchx-color-label-primary:                     $inchx-color-primary--std;
+$inchx-color-label-secondary:                   $inchx-color-secondary--std;
+$inchx-color-label-inverted:                    $inchx-color-inchgrey--400;
+$inchx-color-label-white:                       $inchx-color-white;
+// Button | Label
+$inchx-color-button-label-primary:              $inchx-color-primary--std;
+$inchx-color-button-label-action:               $inchx-color-action--std;
+$inchx-color-button-label-inverted:             $inchx-color-inchgrey--200;
+$inchx-color-button-label-white:                $inchx-color-white;
+// Button | Background
+$inchx-color-button-background-primary:         $inchx-color-primary--std;
+$inchx-color-button-background-action:          $inchx-color-action--std;
+$inchx-color-button-background-inverted:        $inchx-color-inchgrey--200;
+$inchx-color-button-background-white:           $inchx-color-white;
+// Button | Background onHover
+$inchx-color-button-background-primary-hover:   $inchx-color-primary--darker;
+$inchx-color-button-background-action-hover:    $inchx-color-action--darker;
+$inchx-color-button-background-inverted-hover:  $inchx-color-inchgrey--100;
+$inchx-color-button-background-white-hover:     $inchx-color-white;
+// Button | Outline
+$inchx-color-button-outline-primary:            $inchx-color-primary--darker;
+$inchx-color-button-outline-action:             $inchx-color-action--darker;
+$inchx-color-button-outline-inverted:           $inchx-color-inchgrey--100;
+$inchx-color-button-outline-white:              $inchx-color-white;
+// Graphics
+$inchx-color-graphic-dark:                      $inchx-color-inchgrey--800;
+$inchx-color-graphic-primary:                   $inchx-color-primary--std;
+$inchx-color-graphic-secondary:                 $inchx-color-secondary--std;
+$inchx-color-graphic-active:                    $inchx-color-action--std;
+$inchx-color-graphic-accent:                    $inchx-color-accent--std;
+$inchx-color-graphic-grey:                      $inchx-color-inchgrey--600;
+$inchx-color-graphic-inverted:                  $inchx-color-inchgrey--400;
+$inchx-color-graphic-whtie:                     $inchx-color-white;
+// Shadow
+$inchx-color-shadow-default:                    $inchx-color-inchgrey--800;

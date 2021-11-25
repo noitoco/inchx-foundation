@@ -1,0 +1,64 @@
+// - - - - - - - - - - - - - - - - - -
+// INCH Foundation
+//
+// - - - - - - - - - - - - - - - - - -
+// MIXINS
+//
+// - - - - - - - - - - - - - - - - - -
+// - - - - - - - - - - - - - - - - - -
+
+
+@use '../inchx-foundation-tokens/inchx-spacing-tokens' as *;
+@use '../inchx-foundation-tokens/inchx-grid-tokens' as *;
+
+
+
+
+// Breakpoint generatror
+// Creates breakpoints taking grid wrapper width into account
+@mixin breakpoint($point) {
+
+    @if $point == sm {
+        @media (max-width: $inchx-grid-width-md - 1px) { @content; }
+    } @else if $point == md {
+        @media (min-width: $inchx-grid-width-md) { @content; }
+    } @else if $point == md-only {
+        @media (min-width: $inchx-grid-width-md) and (max-width: $inchx-grid-width-lg - 1px) { @content; }
+    } @else if $point == lg {
+        @media (min-width: $inchx-grid-width-lg) { @content; }
+    } @else if $point == lg-only {
+        @media (min-width: $inchx-grid-width-lg) and (max-width: $inchx-grid-width-xl - 1px) { @content; }
+    } @else if $point == xl {
+        @media (min-width: $inchx-grid-width-xl) { @content; }
+    } @else if $point == not-lg {
+        @media (max-width: $inchx-grid-width-lg - 1px) { @content; }
+    } @else if $point == not-xl {
+        @media (max-width: $inchx-grid-width-xl - 1px) { @content; }
+    } @else if $point == retina {
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) { @content; }
+    }
+}
+
+
+
+
+// Viewport class generator
+@mixin viewports {
+    @content;
+    &-sm { @include breakpoint(sm)      { @content; } }
+    &-md { @include breakpoint(md-only) { @content; } }
+    &-lg { @include breakpoint(lg)      { @content; } }
+    &-xl { @include breakpoint(xl)      { @content; } }
+}
+
+
+
+
+// Spacing class generator
+@mixin spacing($prop, $pos) {
+    @each $type, $token in $inchx-spacing { &-#{$type} { @each $x in $pos { #{$prop}-#{$x}: $token; } } }
+    @include breakpoint(sm)      { @each $type, $token in $inchx-spacing { &-#{$type}-sm { @each $x in $pos { #{$prop}-#{$x}: $token; } } } }
+    @include breakpoint(md-only) { @each $type, $token in $inchx-spacing { &-#{$type}-md { @each $x in $pos { #{$prop}-#{$x}: $token; } } } }
+    @include breakpoint(lg)      { @each $type, $token in $inchx-spacing { &-#{$type}-lg { @each $x in $pos { #{$prop}-#{$x}: $token; } } } }
+    @include breakpoint(xl)      { @each $type, $token in $inchx-spacing { &-#{$type}-xl { @each $x in $pos { #{$prop}-#{$x}: $token; } } } }
+}
