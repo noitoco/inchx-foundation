@@ -1,5 +1,7 @@
 # INCHX Foundation [preview]
 
+**INCHX Foundation** is a set of ready-to-use style tokens and classes for IN THE CHAIR Barbershop Appointment App.
+
 Make sure you use `node v16` and `npm v7`
 
 run `npm install` to get all the dependecies

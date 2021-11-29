@@ -1,14 +1,16 @@
 {
-  "name": "inchx_foundation",
+  "name": "inchx-foundation",
   "version": "1.0.0",
-  "description": "INCHX FOUNDATION",
+  "description": "IN THE CHAIR Barbershop Appointment App ready-to-use style tokens and classes.",
+  "keywords": ["inch", "in the chair", "inchx"],
+  "author": "tomek@anywhere.co",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noitoco/inchx-foundation.git"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.0",
     "parcel": "^2.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  }
 }
